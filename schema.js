@@ -1,10 +1,11 @@
 export default `
     type Note {
         _id: String
-        noteid: String
+        noteid: Int
         notetype: String
         message: String
         date: String
+        importance: Int
     }
 
     type Query {
@@ -15,10 +16,16 @@ export default `
     type Mutation {
         addNotes
             (
-            noteid: String
+            noteid: Int!
             notetype: String
             message: String
             date: String
+            importance: Int
             ):Note!
+
+        deleteNotes
+            (
+            noteid: Int
+            ): Boolean
     }
 `

@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 
 const Note = mongoose.model('Note', {
-    id: Number,
+    noteid: Number,
     notetype: String,
     message: String,
-    date: Date
+    date: Date,
+    importance: {type: Number, default: 1},
 })
 
 export default Note;
